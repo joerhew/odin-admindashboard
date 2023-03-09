@@ -18,6 +18,10 @@
     letter-spacing: 1px;
 }
 
+body {
+    margin: 0;
+}
+
 img {
     width: 30px;
     height: auto;
@@ -47,7 +51,6 @@ h2 {
 }
 
 .container {
-    
     display: grid;
     grid-template: minmax(100px,15vh) 1fr / 1.5fr 4fr 1.2fr;
 }
@@ -63,6 +66,11 @@ h2 {
 
     background-color: var(--dark);
     color: var(--lightcool);
+}
+
+.categories {
+    position: sticky;
+    top: 1.5rem;
 }
 
 .categories>img {
@@ -94,9 +102,25 @@ h2 {
 }
 
 .cat-item {
-    margin-bottom: 0.8rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
     display: flex;
     align-items: center;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.cat-item:hover {
+    background-color: var(--lightcool);
+    color: var(--dark);
+    transition: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+.cat-item:hover img {
+    filter: invert(13%) sepia(50%) saturate(591%) hue-rotate(169deg) brightness(91%) contrast(100%);
+    transition: 0.2s;
+    transition-timing-function: ease-out;
 }
 
 .header {
@@ -110,6 +134,8 @@ h2 {
 
     background-color: var(--highlight);
     color: var(--lightwarm);
+
+    z-index: 1;
     
 }
 
@@ -127,6 +153,8 @@ h2 {
     background-color: var(--lightwarm);
     border-radius: 8px;
     margin-right: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #search:focus, #search:hover {
@@ -188,6 +216,17 @@ h2 {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+
+    cursor: pointer;
+
+}
+
+.project-item:hover {
+    border: 1px solid var(--highlight);
+    border-left: 8px solid var(--highlight);
+    transition: 0.1s;
+    scale: 1.01;
+    transition-timing-function: ease-in;
 }
 
 .project-item p {
@@ -197,7 +236,6 @@ h2 {
     border-top-right-radius: 8px;
     font-family: var(--karla);
     text-transform: uppercase;
-    
 }
 
 .btm-icons {
@@ -214,9 +252,11 @@ h2 {
     margin-right: 5px;
 }
 
-.infobar {
+.container>.infobar {
     grid-column: 3 / 4;
     grid-row-start: 2;
+
+    padding-left: 0;
 
     background-color: var(--lightwarm);
     color: var(--dark);
@@ -226,6 +266,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
 
     margin: 0;
     padding: 1rem;
@@ -250,4 +291,27 @@ h2 {
     background-color: var(--neutral);
     margin-top: 1rem;
     margin-bottom: 1rem;
+}
+
+.trending-item {
+    display: flex;
+    background-color: var(--verylightwarm);
+    border-radius: 16px;
+    padding: 1rem;
+    border: solid 1px var(--neutral);
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.trending-item img {
+    margin-right: 10px;
+    width: 50px;
+}
+
+#smaller {
+    width: 45px;
+}
+
+.trending-item p {
+    margin: 0;
 }
